@@ -1,7 +1,7 @@
 import sys
 
 # GREED made by las_r on github
-# version 1.2
+# version 1.3
 
 # how to use:
 # put program in 'prog' variable
@@ -9,9 +9,11 @@ import sys
 
 # notes:
 # c means center
+# 'debug' variable enables tracing
 
 # program
-prog = ">*>>>*>>>>>*>*>>>*>>*>>*>*>>*>*>>>>*>*>>*>*>>>>*>*>>*>*>*>*>>>*>>*>*>>>>>*>>>>>>>*>*>*>>*>*>*>>*>*>>*>*>*>*>>*>*>*>>>*>>>*>*>>*>*>>>>*>*>>>*>>>>>*>>>>>*>"
+prog = "*(>)"
+debug = False
 
 # environment
 stk = [False]
@@ -27,14 +29,23 @@ while i < len(prog):
     # FLIP
     if com == "*":
         stk[ptr] = not stk[ptr]
+
+        if debug:
+            print(f"Flipped ({ptr - init}, {i})")
         
     # TAKE
     elif com == "(":
         mem = stk[ptr]
+
+        if debug:
+            print(f"Took ({ptr - init}, {i})")
         
     # GIVE
     elif com == ")":
         stk[ptr] = mem
+
+        if debug:
+            print(f"Gave ({ptr - init}, {i})")
         
     # FORWARD
     elif com == ">":
@@ -43,6 +54,9 @@ while i < len(prog):
             stk[ptr]
         except IndexError:
             stk.append(False)
+
+        if debug:
+            print(f"Moved stack forward ({ptr - 1 - init}, {i})")
             
     # BACKWARD
     elif com == "<":
@@ -51,16 +65,22 @@ while i < len(prog):
             stk.insert(0, False)
             init += 1
             ptr = 0
+
+        if debug:
+            print(f"Moved stack forward ({ptr + 1 - init}, {i})")
             
     # REWIND
     elif com == "&":
         if mem:
-            i = 0
+            i = -1
             ptr = init
+
+            if debug:
+                print(f"Rewinding...")
             
     # unknown
     else:
-        print(f"`{com}` is not a known command.")
+        print(f"`{com}` is not a known command. ({ptr + 1 - init}, {i})")
         sys.exit(1)
     
     i += 1
