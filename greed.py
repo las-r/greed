@@ -1,7 +1,7 @@
 import sys
 
 # GREED made by las_r on github
-# version 1.3
+# version 1.4
 
 # how to use:
 # put program in 'prog' variable
@@ -87,14 +87,14 @@ while i < len(prog):
 
 # binary stack
 bstk = ""
-for ind, s in enumerate(stk):
-    if ind - init == 0:
-        bstk += "c"
-    
+for ind, s in enumerate(stk):    
     if s:
         bstk += "1"
     else:
         bstk += "0"
+
+# hex stack
+hstk = hex(int(bstk))
 
 # ascii stack
 if len(bstk.replace("c", "")) % 8 == 0:
@@ -103,7 +103,8 @@ else:
     astk = "Invalid length for ASCII decoding"
 
 # output
-print(f"STACK: {bstk}")
+print(f"STACK (Binary): 0b{bstk}")
+print(f"STACK (Hex): {hstk}")
 print(f"STACK (ASCII): {astk}")
 print(f"MEM: {mem}")
 print(f"Pointer Position: {ptr - init}")
