@@ -4,7 +4,7 @@ GREED is an esoteric programming language with only 6 commands. It uses a stack 
 ## Commands
 **FLIP** (Flip STACK): `*`  
 **TAKE** (Set MEM to STACK): `(`  
-**GIVE** (Set STACK to MEbM): `)`  
+**GIVE** (Set STACK to MEM): `)`  
 **FORWARD** (Move stack forward): `>`  
 **BACKWARD** (Move stack backward: `<`  
 **REWIND** (Set the pointer to index 0 if MEM is 1): `&`
