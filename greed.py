@@ -1,7 +1,7 @@
 import sys
 
 # GREED made by las_r on github
-# version 1.4
+# version 1.0
 
 # how to use:
 # put program in 'prog' variable
@@ -12,7 +12,7 @@ import sys
 # 'debug' variable enables tracing
 
 # program
-prog = "*(>)"
+prog = ">*>>>*>>>>>*>*>>>*>>*>>*>*>>*>*>>>>*>*>>*>*>>>>*>*>>*>*>*>*>>>*>>*>*>>>>>*>>>>>>>*>*>*>>*>*>*>>*>*>>*>*>*>*>>*>*>*>>>*>>>*>*>>*>*>>>>*>*>>>*>>>>>*>>>>>*>"
 debug = False
 
 # environment
@@ -97,14 +97,11 @@ for ind, s in enumerate(stk):
 hstk = hex(int(bstk))
 
 # ascii stack
-if len(bstk.replace("c", "")) % 8 == 0:
-    astk = ''.join(chr(int(bstk.replace("c", "")[i:i+8], 2)) for i in range(0, len(bstk.replace("c", "")), 8))
-else:
-    astk = "Invalid length for ASCII decoding"
+astk = ''.join(chr(int(bstk[i:i+8], 2)) for i in range(0, len(bstk), 8))
 
 # output
 print(f"STACK (Binary): 0b{bstk}")
 print(f"STACK (Hex): {hstk}")
 print(f"STACK (ASCII): {astk}")
 print(f"MEM: {mem}")
-print(f"Pointer Position: {ptr - init}")
+print(f"Pointer Position: {ptr}")
