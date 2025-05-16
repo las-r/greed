@@ -10,3 +10,11 @@ GREED is an esoteric programming language with only 6 commands. It uses a stack 
 **REWIND** (Set the pointer to index 0 if MEM is 1): `&`
 
 ## Examples
+### First Bit To 1
+```
+*
+```
+### Hello World (ASCII)
+```
+>*>>>*>>>>>*>*>>>*>>*>>*>*>>*>*>>>>*>*>>*>*>>>>*>*>>*>*>*>*>>>*>>*>*>>>>>*>>>>>>>*>*>*>>*>*>*>>*>*>>*>*>*>*>>*>*>*>>>*>>>*>*>>*>*>>>>*>*>>>*>>>>>*>>>>>*>
+```
