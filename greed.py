@@ -1,7 +1,7 @@
 import sys
 
 # GREED made by las_r on github
-# version 1.0
+# version 1.1
 
 # how to use:
 # put program in 'prog' variable
@@ -11,7 +11,7 @@ import sys
 # c means center
 
 # program
-prog = "*<*<<*"
+prog = ">*>>>*>>>>>*>*>>>*>>*>>*>*>>*>*>>>>*>*>>*>*>>>>*>*>>*>*>*>*>>>*>>*>*>>>>>*>>>>>>>*>*>*>>*>*>*>>*>*>>*>*>*>*>>*>*>*>>>*>>>*>*>>*>*>>>>*>*>>>*>>>>>*>>>>>*>"
 
 # environment
 stk = [False]
@@ -65,16 +65,25 @@ while i < len(prog):
   
   i += 1
 
-# output
-sstk = ""
+# binary stack
+bstk = ""
 for ind, s in enumerate(stk):
   if ind - init == 0:
-    sstk += "c"
+    bstk += "c"
   
   if s:
-    sstk += "1"
+    bstk += "1"
   else:
-    sstk += "0"
-print(f"STACK: {sstk}")
+    bstk += "0"
+
+# ascii stack
+try:
+  astk = ''.join(chr(int(bstk.replace("c", "")[i:i+8], 2)) for i in range(0, len(bstk.replace("c", "")), 8))
+except:
+  astk = None
+
+# output
+print(f"STACK: {bstk}")
+print(f"STACK (ASCII): {astk}")
 print(f"MEM: {mem}")
-print(f"Pointer: {ptr - init}")
+print(f"Pointer Position: {ptr - init}")
