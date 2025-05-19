@@ -1,7 +1,7 @@
 import sys
 
 # GREED made by las_r on github
-# version 1.0
+# version 1.6
 
 # how to use:
 # put program in 'prog' variable
