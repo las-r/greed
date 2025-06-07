@@ -1,7 +1,7 @@
 import sys
 
 # GREED made by las_r on github
-# version 1.6
+# version 2.0
 
 # how to use:
 # put program in 'prog' variable
@@ -25,6 +25,7 @@ mem = False
 i = 0
 while i < len(prog):
     com = prog[i]
+    i += 1
     
     # FLIP
     if com == "*":
@@ -69,21 +70,18 @@ while i < len(prog):
         if debug:
             print(f"Moved stack forward ({ptr + 1 - init}, {i})")
             
-    # REWIND
-    elif com == "&":
+    # JUMP
+    elif com == "!":
         if mem:
-            i = -1
-            ptr = init
+            i = stk[ptr]
 
             if debug:
-                print(f"Rewinding...")
+                print(f"Jumping ({ptr + 1 - init}, {i})")
             
     # unknown
     else:
         print(f"`{com}` is not a known command. ({ptr + 1 - init}, {i})")
         sys.exit(1)
-    
-    i += 1
 
 # binary stack
 bstk = ""
