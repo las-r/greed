@@ -1,7 +1,8 @@
 # binary to greed converter by las_r on github
+# v1.1
 
 # usage:
-# input binary into the `binarystr` variable
+# input binary into the `binary` variable
 # run program in command line
 # copy generated greed program which sets the stack to the binary
 
