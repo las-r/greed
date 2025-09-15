@@ -1,6 +1,6 @@
 # GREED
 
-**GREED** is an esoteric programming language made by [las_r](https://github.com/las-r) with only 6 commands. It uses a stack tape made of single-bit values and also has a separate memory for storing 1 bit.
+**GREED** is an esoteric programming language with only 6 commands. It uses a stack tape made of single-bit values and also has a separate memory for storing 1 bit.
 
 It's heavily inspired by [Brainfuck](https://esolangs.org/wiki/Brainfuck). However, it has many differences, especially in the loop behavior.
 
@@ -36,11 +36,3 @@ Sets `STK` to `"Hello, world!"`:
 ```
 >*>>>*>>>>>*>*>>>*>>*>>*>*>>*>*>>>>*>*>>*>*>>>>*>*>>*>*>*>*>>>*>>*>*>>>>>*>>>>>>>*>*>*>>*>*>*>>*>*>>*>*>*>*>>*>*>*>>>*>>>*>*>>*>*>>>>*>*>>>*>>>>>*>>>>>*>
 ```
-
-## Categories
-
-- 2025  
-- Stack-based  
-- No IO  
-- Implemented  
-- Brainfuck derivatives  
